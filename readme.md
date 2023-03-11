@@ -6,10 +6,13 @@
 pyenv로 버전 세팅(brew install pyenv)
 
 python3 -m venv .venv
+
 source .venv/bin/activate
+
 pip install -r requirements.txt
 
 --버전 프리즈시
+
 --pip freeze > requirements.txt
 
 파이참 내에서 인터프리터 설정시 existing 선택 후 특정버전 python 선택
