@@ -35,14 +35,26 @@ def run():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     print("Current session is {}".format(driver.session_id))
     # driver.get(naver)
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(20)
     driver.get(url)
     # driver.get(naver)
+    driver.implicitly_wait(10)
 
+    driver.switch_to.frame('indexFrame')
     html = driver.page_source
+    print(html)
+
+    print("=============================================")
+    print("=============================================")
+
+    document_element = driver.execute_script("return document.documentElement;")
+    print(document_element)
+
     soup = bs(html, 'html.parser')
 
-    print(soup)
+    # print(soup)
+
+    driver.quit()
 
     # # driver.quit()
     # try:
